@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="valentine.css">
+     
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's YANNNNN!</h1>
+        <br>
+        <br>
+        <br>
+        <p>Hiii Yannn!!!! This is first time coding something as a gift for someone, so I hope that you like it...
+            (it looks so bad aaa) Anyways, this is kind of a letter for you since I thought that this would be a good
+            way to convey my feeling about you and our situation. First of all, I'm really glad that someone
+            as beautiful, funny, interesting, smart, strong-willed and cute as you is my girlfriend (i honestly dont know
+            how i pulled you). Your presence in my life has made it become brighter and more fun everyday, especially when
+            we talk and hangout more together :p. I have learned a lot of things from you, those being related to how
+            I should treat you and I am sure that you have made me an overall better person, so please keep teaching
+            me about love for the rest of our lives ;). I know that it has been extremely hard for us recently due to
+            my stupid parents, their dumb beliefs about online relationships and your family making you stressed everyday,
+            but I want to believe in us and make this relationship work (im sorry for being selfish). By the way today is like
+            my last day of class so I WILL FINALLY BE FREE and we will be able to give more time to each other and 
+            plan our expensessss yayyyy. I will be honest with you, I dont consider myself a great person, I have quite a few
+            flaws and im working on them, so thank you for being so patient and forgiving with me even though I am such a dumbass
+            (i love youuuuu :)). With all of that being said, lets work hard and hope that this relationship will work out,
+            since I dont see myself being with anyone else besides you, so I will steal you away :3. Lastly, will you be my
+            valentine, Yanan?    
+        </p>
+    
+    </div>
+    <button class="toggle-btn" onclick="toggleModal()">Gallery :3</button>
+    <div class="modal-overlay" id="modal">
+        <div class="gallery">
+            <img id="photo" src="pic1.jpg" alt="Imagem 1">
+            <p class="description" id="description">Face reveal pics!!! Your face is literally so prettyyy</p>
+            <div class="controls">
+                <button class="btn" onclick="prevPhoto()">⬅</button>
+                <button class="close-btn" onclick="toggleModal()">X</button>
+                <button class="btn" onclick="nextPhoto()">➡</button>
+            </div>
+        </div>
+    </div>
+    <div class="hearts">
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+    <script>
+        const modal = document.getElementById("modal");
+        const photos = [
+            { src: "pic1.jpg", desc: "Face reveal pics!!! Your face is literally so prettyyy" },
+            { src: "pic2.jpg", desc: "I love your bright smile, it always makes me happy" },
+            { src: "pic3.jpg", desc: "You winking and making that cute pose made me fall for you" },
+            { src: "pic4.jpg", desc: "Luca my beloved (hes so cute)" },
+            { src: "pic5.jpg", desc: "YOUR SMILE IS SO CUTE I CANTTTTTT" },
+            { src: "pic6.jpg", desc: "Your hunter eyes are so pretty like OMGGG GIRLLLL SLAYYY" },
+            { src: "pic7.jpg", desc: "I FOUND THIS PIC AND IT WAS SO FUNNY 'I have two sides...'AHH PIC LMAOOO" },
+            { src: "pic8.jpg", desc: "The dog filter looks so silly and cute on you (whos my good girl? Bark for me pookie :3)" },
+            { src: "pic9.jpg", desc: "WHY ARE U GIVING ME THE SIDE EYEEE (looking fine as hell tho...)" },
+            { src: "pic10.jpg", desc: "LITTLE YAN WITH HER ICONIC POSE OMGGGGGGG YOU ARE SO CUTEEEEEEEEE AAAA" },
+            { src: "pic11.jpg", desc: "hmph hmph hmph hmph how could u be mean to me :( i will cry" },
+            { src: "pic12.jpg", desc: "Giving me the side eye on the bussss (i want to eat u up)" },
+            { src: "pic13.jpg", desc: "DAMNNNN you look so cool and nonchalanttttttttt (im gonna kiss u)" },
+            { src: "pic14.jpg", desc: "My pookie brushing her teethhhhhhhhhhhhh (SO CUTEEE)" },
+            { src: "pic15.jpg", desc: "Hehehehh u hit that silly but cute pose I LOVE ITTTTT (girl is NOT the america psycho)" },
+            { src: "pic16.jpg", desc: "CUTEST DUO I HAVE EVER SEENNNNNNNNN OMGGGGGG I NEED MORE PICS LIKE THESEEEE" },
+            { src: "pic17.jpg", desc: "I love this pic so much, you look REALLLLYYY hot on that one (you always do) but its something about the pose that you did that awakened something inside of me" },
+            { src: "pic18.jpg", desc: "Please dont hit mee :((((((((((( im gonna cry more if u do (this pic was really silly eheheheeheh)" }
+
+        ];
+
+        let index = 0;
+
+        function updatePhoto() {
+            const img = document.getElementById("photo");
+            const desc = document.getElementById("description");
+            img.style.opacity = "0"; // Suaviza a transição
+            setTimeout(() => {
+                img.src = photos[index].src;
+                desc.textContent = photos[index].desc;
+                img.style.opacity = "1";
+            }, 300);
+        }
+
+        function nextPhoto() {
+            index = (index + 1) % photos.length; // Volta para a primeira ao chegar na última
+            updatePhoto();
+        }
+
+        function prevPhoto() {
+            index = (index - 1 + photos.length) % photos.length; // Volta para a última ao chegar na primeira
+            updatePhoto();
+        }
+
+        function toggleModal() {
+            modal.classList.toggle("active");
+        }
+    </script>
+    
+</body>   
+</html>
